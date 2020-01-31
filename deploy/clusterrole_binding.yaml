@@ -5,7 +5,7 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: spark-cluster-operator
-  namespace: bdkit
+  namespace: spark-cluster
 roleRef:
   kind: ClusterRole
   name: spark-cluster-operator

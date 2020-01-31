@@ -137,6 +137,10 @@ func (t *Terminal) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	query := r.URL.Query()
 	podName, ok1 := query["pod"]
 	container, ok2 := query["container"]
+
+	// log.Debugf("terminal get http request,pod name: %s, container: %s", podName, container)
+
+
 	if !ok1 || !ok2 || len(podName) == 0 || len(container) == 0 {
 		responseJSON(Message{"missing required fields."}, w, http.StatusInternalServerError)
 		return

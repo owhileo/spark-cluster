@@ -1,0 +1,17 @@
+apiVersion: apps/v1   #当前格式的版本
+kind: Deployment                 #当前创建资源的类型， 当前类型是Deployment
+metadata:                        #当前资源的元数据
+  name: hdfs-test               #当前资源的名字 是元数据必须的项
+spec:                            #是当前Deployment的规格说明
+  replicas: 1 #指当前创建的副本数量 默认不填 默认值就为‘1’
+  selector:
+    matchLabels:
+      app: hdfs-server
+  template:                      #定义pod的模板
+    metadata:                    #当前pod的元数据
+      labels:                    #至少顶一个labels标签，可任意创建一个 key:value
+        app: hdfs-server
+    spec:                        #当前pod的规格说明
+      containers:                #容器
+      - name: h0              #是容器的名字容器名字是必须填写的
+        image: registry.njuics.cn/bdkit/hdfs:latest      #镜像 镜像的名字和版本

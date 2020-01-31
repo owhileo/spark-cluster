@@ -2,15 +2,17 @@ apiVersion: spark.k8s.io/v1alpha1
 kind: SparkCluster
 metadata:
   labels:
-    app: user2-cluster
-  name: user2-cluster
+    app: usert-cluster
+  name: usert-cluster
 spec:
-  gitRepo: https://github.com/Toydi/WordCount.git
-  gitUserName: Toydi
+  # gitRepo: https://github.com/Toydi/WordCount.git
+  gitRepo: https://git.nju.edu.cn/while/FBDP.git
+  gitUserName: while
   gitUserEmail: 529660369@qq.com
-  clusterPrefix: user2
+  clusterPrefix: usert-cluster
   slaveNum: 3
+  datasets: ["dataset1"]
   pvcEnable: False
-  nfs: True
+  nfs: False
 
 

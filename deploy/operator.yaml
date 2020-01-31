@@ -16,7 +16,7 @@ spec:
       containers:
         - name: spark-cluster-operator
           # Replace this with the built image name
-          image: registry.njuics.cn/qr/spark-operator:latest
+          image: registry.njuics.cn/bdkit/spark-cluster:latest
           ports:
           - containerPort: 60000
             name: metrics
@@ -33,7 +33,7 @@ spec:
             failureThreshold: 1
           env:
             - name: WATCH_NAMESPACE
-              value: ""
+              value: "spark-cluster"
             - name: POD_NAME
               valueFrom:
                 fieldRef:

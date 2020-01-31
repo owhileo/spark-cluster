@@ -6,8 +6,8 @@ import (
 )
 
 const (
-	Namespace = "bdkit"
-	ResourceNamespace = "bdkit-resources"
+	Namespace = "spark-cluster"
+	ResourceNamespace = "spark-cluster"
 )
 
 const (

@@ -6,11 +6,12 @@ metadata:
   name: user1-cluster
 spec:
   # Add fields here
-  gitRepo: https://github.com/wdongyu/wordcount.git
+  gitRepo: https://github.com/owhileo/FBDP.git
   clusterPrefix: user1-cluster
-  slaveNum: 3
+  slaveNum: 1
   pvcEnable: False
-  nfs: True 
+  datasets: ["dataset1"]
+  nfs: False 
   # ports:
   #   - port: 9000
   #     name: hdfs
