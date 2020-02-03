@@ -20,3 +20,6 @@ const (
 	StorageClassName = "cephfs"
 	DefaultGitRepo   = "https://github.com/Toydi/Test"
 )
+
+var ImageNames = []string{"a","b","c"}
+var ImageAddr = []string{"registry.njuics.cn/bdkit/spark_master_on_kube:latest","registry.njuics.cn/bdkit/spark_master_on_kube:1.0","registry.njuics.cn/bdkit/spark_master_on_kube:2.0"}

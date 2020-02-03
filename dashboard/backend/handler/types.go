@@ -18,10 +18,14 @@ const (
 type SparkClusterList struct {
 	SparkClusters []sparkv1alha1.SparkCluster `json:"sparkclusters"`
 	GitRepos []string `json:"gitrepos"`
-} 
+}
 
 type DatasetList struct{
 	Datasets []datasetv1alha1.Dataset `json:"datasets"`
+}
+
+type ImageList struct{
+	Images []string `json:"datasets"`
 }
 
 type User struct {

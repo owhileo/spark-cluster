@@ -59,7 +59,7 @@ func NewRouter(handler *APIHandler) http.Handler {
 			"POST",
 			"/apis/dataset",
 			handler.CreateDataset,
-		},		
+		},
 		{
 			"ListSparkCluster",
 			"GET",
@@ -83,12 +83,18 @@ func NewRouter(handler *APIHandler) http.Handler {
 			"PUT",
 			"/apis/sparkcluster/{sparkcluster}",
 			handler.UpdateSparkCluster,
-		},		
+		},
 		{
 			"CurrentUser",
 			"GET",
 			"/apis/user",
 			handler.CurrentUser,
+		},
+		{
+			"ListImage",
+			"GET",
+			"/apis/image",
+			handler.ListImage,
 		},
 	}
 	// The public route is always accessible

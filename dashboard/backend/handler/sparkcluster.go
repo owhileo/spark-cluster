@@ -15,6 +15,11 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 )
 
+func (handler *APIHandler) ListImage(w http.ResponseWriter, r *http.Request) {
+
+		responseJSON(ImageList{Images: sparkcluster.ImageNames}, w, http.StatusOK)
+}
+
 func (handler *APIHandler) ListSparkCluster(w http.ResponseWriter, r *http.Request) {
 	user := r.Header.Get("User")
 	shareflag := "true"
