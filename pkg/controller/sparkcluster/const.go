@@ -22,4 +22,4 @@ const (
 )
 
 var ImageNames = []string{"Spark with Anaconda","Spark without Anaconda","none"}
-var ImageAddr = []string{"registry.njuics.cn/bdkit/spark_master_on_kube:latest","registry.njuics.cn/bdkit/spark_master_on_kube:1.0.3","registry.njuics.cn/bdkit/spark_master_on_kube:1.0.3"}
+var ImageAddr = []string{"registry.njuics.cn/wdongyu/spark_master_on_kube:1.0.3","registry.njuics.cn/bdkit/spark_master_on_kube:latest","registry.njuics.cn/wdongyu/spark_master_on_kube:1.0.3"}
