@@ -32,12 +32,13 @@ type SparkClusterSpec struct {
 	GitUserName   string                      `json:"gitUserName"`
 	GitUserEmail  string                      `json:"gitUserEmail"`
 	SlaveNum      int                         `json:"slaveNum"`
-	Shared        string                      `json:"shared"`         
+	Shared        string                      `json:"shared"`
 	Ports         []corev1.ServicePort        `json:"ports,omitempty"`
 	PvcEnable     bool                        `json:"pvcEnable,omitempty"`
 	Resources     corev1.ResourceRequirements `json:"resources,omitempty"`
 	NFS           bool                        `json:"nfs,omitempty"`
 	Datasets      []string                    `json:"datasets,omitempty"`
+	ImageNum      int                         `json:"choose the Nth image"`
 }
 
 // SparkClusterPhase defines all phase of SparkCluster lifecycle.

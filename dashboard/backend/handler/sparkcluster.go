@@ -90,6 +90,10 @@ func (handler *APIHandler) CreateSparkCluster(w http.ResponseWriter, r *http.Req
 		sc.Namespace = ResourceNamespace
 	}
 
+	if len(sc.Spec.ImageNum) == 0 {
+		sc.Spec.ImageNum=0
+	}
+
 	if len(sc.Spec.Shared)!=0{
 		sparkcluster.AddUserLabel(sc, shared)
 	}
