@@ -90,7 +90,7 @@ func (handler *APIHandler) CreateSparkCluster(w http.ResponseWriter, r *http.Req
 		sc.Namespace = ResourceNamespace
 	}
 
-	if len(sc.Spec.ImageNum) == 0 {
+	if sc.Spec.ImageNum >= len(sparkcluster.ImageAddr) {
 		sc.Spec.ImageNum=0
 	}
 
