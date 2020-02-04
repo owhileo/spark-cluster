@@ -54,7 +54,7 @@ func (r *ReconcileSparkCluster) newMasterPod(instance *sparkv1alpha1.SparkCluste
 				{
 					Name:  masterName(instance),
 					Image: ImageAddr[instance.Spec.ImageNum],
-					//Image: MasterImage,instance.Spec.
+					//Image: MasterImage,
 					// Command:         []string{"bash", "-c", "/etc/master-bootstrap.sh " + fmt.Sprintf("%d", instance.Spec.SlaveNum)},
 					ImagePullPolicy: "Always",
 					Ports: []corev1.ContainerPort{

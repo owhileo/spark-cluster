@@ -10,8 +10,9 @@ const (
 	// MasterImage      = "registry.njuics.cn/qr/spark-master:0.1"
 	// SlaveImage       = "registry.njuics.cn/qr/spark-slave:0.1"
 	// VscodeImage      = "registry.njuics.cn/dlkit/code-server"
-  MasterImage      = "registry.njuics.cn/wdongyu/spark_master_on_kube:1.0.3"
-  // MasterImage      = "registry.njuics.cn/bdkit/spark_master_on_kube:latest"
+  //MasterImage      = "registry.njuics.cn/wdongyu/spark_master_on_kube:1.0.3"
+
+	// MasterImage      = "registry.njuics.cn/bdkit/spark_master_on_kube:latest"
 	SlaveImage       = "registry.njuics.cn/wdongyu/spark_slave_on_kube:1.0.3"
 	VscodeImage      = "registry.njuics.cn/qr/code-server:1.0"
 	Slave            = "slave"
@@ -22,4 +23,4 @@ const (
 )
 
 var ImageNames = []string{"Spark with Anaconda","Spark without Anaconda","none"}
-var ImageAddr = []string{"registry.njuics.cn/wdongyu/spark_master_on_kube:1.0.3","registry.njuics.cn/bdkit/spark_master_on_kube:latest","registry.njuics.cn/wdongyu/spark_master_on_kube:1.0.3"}
+var ImageAddr = []string{"registry.njuics.cn/bdkit/spark_master_on_kube:latest","registry.njuics.cn/wdongyu/spark_master_on_kube:1.0.3","registry.njuics.cn/wdongyu/spark_master_on_kube:1.0.3"}
