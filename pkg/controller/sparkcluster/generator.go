@@ -43,6 +43,10 @@ func (r *ReconcileSparkCluster) newMasterPod(instance *sparkv1alpha1.SparkCluste
 	// volumeMounts_git=append(volumeMounts_git,corev1.VolumeMount{Name:"code",MountPath:"/root/code"})
 	pvc := corev1.PersistentVolumeClaimVolumeSource{ClaimName: instance.Spec.ClusterPrefix + "-" + "vscode-pvc"}
 	volumes = append(volumes, corev1.Volume{Name: "code", VolumeSource: corev1.VolumeSource{PersistentVolumeClaim: &pvc}})
+
+	log.Info("Instance creating master", " addr: ", ImageAddr[instance.Spec.ImageNum])
+	log.Info("Instance creating master", " num: ", instance.Spec.ImageNum)
+	
 	masterpod := &corev1.Pod{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      masterName(instance),
@@ -54,7 +58,6 @@ func (r *ReconcileSparkCluster) newMasterPod(instance *sparkv1alpha1.SparkCluste
 				{
 					Name:  masterName(instance),
 					Image: ImageAddr[instance.Spec.ImageNum],
-					//Image: MasterImage,
 					// Command:         []string{"bash", "-c", "/etc/master-bootstrap.sh " + fmt.Sprintf("%d", instance.Spec.SlaveNum)},
 					ImagePullPolicy: "Always",
 					Ports: []corev1.ContainerPort{
