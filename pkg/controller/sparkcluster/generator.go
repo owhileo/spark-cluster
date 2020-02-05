@@ -46,7 +46,8 @@ func (r *ReconcileSparkCluster) newMasterPod(instance *sparkv1alpha1.SparkCluste
 
 	log.Info("Instance creating master", " addr: ", ImageAddr[instance.Spec.ImageNum])
 	log.Info("Instance creating master", " num: ", instance.Spec.ImageNum)
-	
+	log.Info("Instance creating master", " num2: ", instance.Spec.SlaveNum)
+
 	masterpod := &corev1.Pod{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      masterName(instance),
