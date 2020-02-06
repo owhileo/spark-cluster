@@ -238,8 +238,7 @@ func (r *ReconcileSparkCluster) newUIService(instance *sparkv1alpha1.SparkCluste
 		{
 			Name: "jupyter",
 			Port: 9700,
-		}
-	}
+		}}
 	ports = append(ports, instance.Spec.Ports...)
 
 	return &corev1.Service{
