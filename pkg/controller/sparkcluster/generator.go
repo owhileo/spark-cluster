@@ -44,9 +44,9 @@ func (r *ReconcileSparkCluster) newMasterPod(instance *sparkv1alpha1.SparkCluste
 	pvc := corev1.PersistentVolumeClaimVolumeSource{ClaimName: instance.Spec.ClusterPrefix + "-" + "vscode-pvc"}
 	volumes = append(volumes, corev1.Volume{Name: "code", VolumeSource: corev1.VolumeSource{PersistentVolumeClaim: &pvc}})
 
-	log.Info("Instance creating master", " addr: ", ImageAddr[instance.Spec.ImageNum])
-	log.Info("Instance creating master", " num: ", instance.Spec.ImageNum)
-	log.Info("Instance creating master", " num2: ", instance.Spec.SlaveNum)
+	// log.Info("Instance creating master", " addr: ", ImageAddr[instance.Spec.ImageNum])
+	// log.Info("Instance creating master", " num: ", instance.Spec.ImageNum)
+	// log.Info("Instance creating master", " num2: ", instance.Spec.SlaveNum)
 
 	masterpod := &corev1.Pod{
 		ObjectMeta: metav1.ObjectMeta{
@@ -234,7 +234,12 @@ func (r *ReconcileSparkCluster) newUIService(instance *sparkv1alpha1.SparkCluste
 		{
 			Name: "spark-shell",
 			Port: 4040,
-		}}
+		},
+		{
+			Name: "jupyter",
+			Port: 9700,
+		}
+	}
 	ports = append(ports, instance.Spec.Ports...)
 
 	return &corev1.Service{
