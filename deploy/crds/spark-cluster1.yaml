@@ -11,6 +11,7 @@ spec:
   gitUserEmail: 529660369@qq.com
   clusterPrefix: usert-cluster
   slaveNum: 3
+  imageNum: 1
   datasets: ["dataset1"]
   pvcEnable: False
   nfs: False

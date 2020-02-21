@@ -17,7 +17,7 @@ spec:
       serviceAccountName: spark-cluster-operator
       containers:
         - name: spark-backend
-          image: "registry.njuics.cn/bdkit/spark-cluster:v3"
+          image: "registry.njuics.cn/bdkit/spark-cluster:latest"
           imagePullPolicy: Always
           command:
           - /usr/local/bin/backend
